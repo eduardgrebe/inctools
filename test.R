@@ -188,37 +188,4 @@ I2$Incidence.Difference.Statistics$p.value
 print(I2)
 str(I2)
 
-inccounts(N = 10000,
-          N_H = 1000,
-          N_testR = 990,
-          N_R = 99,
-          DE_H = 1.2,
-          DE_R = 1.2,
-          Boot = FALSE,
-          alpha = 0.05,
-          MDRI= 200,
-          RSE_MDRI = 0.1,
-          FRR = 0.01,
-          RSE_FRR = 0.25,
-          BigT = 730.5,
-          Covar_HR = 0,
-          debug = FALSE)
-
-incprops(PrevH = 0.1, 
-         RSE_PrevH = 0.03286335,
-         PrevR = 0.1, 
-         RSE_PrevR = 0.1044466,
-         Boot = FALSE,
-         alpha = 0.05,
-         MDRI= 200,
-         RSE_MDRI = 0.1,
-         FRR = 0.01,
-         RSE_FRR = 0.25,
-         BigT = 730.5,
-         Covar_HR = 0,
-         debug = FALSE)
-
-
-
-
 

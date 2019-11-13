@@ -1,6 +1,5 @@
-# Incidence Estimation Tools Copyright (C) 2015-2018, DST-NRF Centre of
-# Excellence in Epidemiological Modelling and Analysis (SACEMA), Stellenbosch
-# University and individual contributors.
+# Incidence Estimation Tools. Copyright (C) 2015-2019, individual contributors
+# and Stellenbosch University.
 #
 # This program is free software: you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free Software
@@ -137,7 +136,7 @@ frrcal <- function(data = NULL,
                           recency_rule = recency_rule,
                           debug = debug)
 
-  subjectdata <- data.frame(sid = NA, recent = NA)
+  subjectdata <- tibble::tibble(sid = NA, recent = NA)
   for (subjectid in unique(data$sid)) {
     if (sum(data$recency_status[data$sid == subjectid] == 1)/nrow(data[data$sid ==
                                                                        subjectid, ]) == 0.5) {
@@ -158,8 +157,9 @@ frrcal <- function(data = NULL,
   p <- nr / n
   sigma <- sqrt( (p * (1 - p)) / n )
   binom_ci <- binom::binom.confint(nr, n, conf.level = 1 - alpha, methods = method)
-  FRR <- tibble::tibble(FRRest = p, SE = sigma, LB = binom_ci$lower, UB = binom_ci$upper, 
+  FRR <- tibble::tibble(FRRest = p, SE = sigma, CI_LB = binom_ci$lower, CI_UB = binom_ci$upper, 
                         alpha = alpha, n_recent = nr, n_subjects = n, n_observations = nrow(data), 
                         ci_method = method)
+  options(pillar.sigfig = 6)
   return(FRR)
 }
