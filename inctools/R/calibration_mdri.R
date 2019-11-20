@@ -321,7 +321,7 @@ mdrical <- function(data = NULL,
         dplyr::group_by(.data$sid)
 
       if (!output_bs_parms) {
-        mdris <- foreach::foreach(j = 1:n_bootstraps, .combine = rbind,
+        mdris <- foreach::foreach(j = 1:n_bootstraps, .combine = c,
                                   #.options.snow = opts,
                                   .inorder = FALSE #,
                                   #.packages = "inctools"
@@ -347,7 +347,7 @@ mdrical <- function(data = NULL,
         parallel::stopCluster(cluster)
 
       } else if(output_bs_parms) {
-        mdris_and_params <- foreach::foreach(j = 1:n_bootstraps, .combine = rbind,
+        mdris_and_params <- foreach::foreach(j = 1:n_bootstraps, .combine = dplyr::bind_rows,
                                              #.options.snow = opts,
                                              .inorder = FALSE #,
                                              #.packages = "inctools"
