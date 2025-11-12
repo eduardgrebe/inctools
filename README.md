@@ -33,7 +33,7 @@ To build and install the current development version, make sure you have
 `devtools` installed and execute the following line:
 
 ```
-devtools::install_github("SACEMA/inctools/inctools")
+devtools::install_github("SACEMA/inctools")
 ```
 
 *Note: pay attention to whether the current build is passing or failing before 
@@ -43,7 +43,7 @@ At times the bleeding edge version can be installed from Eduard Grebe's fork of
 the repository (**not recommended!**) with the following line:
 
 ```
-devtools::install_github("eduardgrebe/inctools/inctools")
+devtools::install_github("eduardgrebe/inctools")
 ```
 
 ## Usage terms
