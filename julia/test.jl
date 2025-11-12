@@ -1,4 +1,5 @@
-push!(LOAD_PATH, "~/dev/inctools/julia/")
-using Incidence
+Pkg.activate("./Inctools") 
+#push!(LOAD_PATH, "/Users/c00192/dev/inctools/julia/") # Needs an absolute path
+using Inctools
 
 prevalence(1000, 5000)

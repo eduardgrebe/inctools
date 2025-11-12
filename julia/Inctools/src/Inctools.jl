@@ -10,7 +10,7 @@
 # details.  You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-module Incidence
+module Inctools
 
 export prevalence, rtmvnorm, incprops, inccounts, incdif
 
@@ -629,7 +629,5 @@ function inccounts(n::AbstractVector{Int64},
                             cov = 0.0, T = T, timeconversion = timeconversion,
                             bs = bs, α = α, per = per)
 end
-
-
 
 end
