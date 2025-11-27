@@ -1,2 +1,0 @@
-fixes:
-  - "::inctools/"         # move root   e.g., "path/" => "after/path/"
